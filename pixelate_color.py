@@ -48,5 +48,7 @@ cropped_hsv = img_hsv[rect[1]:rect[1]+rect[3], rect[0]:rect[0]+rect[2]]
 rng = getRange(cropped_hsv)
 print(rng)
 mask = getMask(img_hsv, rng)
+res=cv2.bitwise_and(img,img,mask=mask)
 cv2.imshow('mask', mask)
+cv2.imshow("img",res)
 cv2.waitKey(0)
